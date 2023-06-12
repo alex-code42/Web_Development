@@ -58,3 +58,17 @@ h2{
   margin:  5%;
   color: #FEF2BF;
 }
+
+@media only screen and (max-width: 1000px) {
+  
+  
+  h1 {
+    padding: 120px;
+    background-color: blue;
+    
+    
+  }
+  h2{
+    font-size: large;
+  }
+}

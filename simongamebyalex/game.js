@@ -123,7 +123,16 @@ function checkAnswer(currentLevel){
         setTimeout(function() {
           $("body").removeClass("game-over");
         }, 150);
-        $("h1").text("Game Over, Press Any Key to Restart")
+        
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+          // Take the user to a different screen here.
+          
+          $("h1").text("Game Over, Press Button")
+        }
+        else{
+          $("h1").text("Game Over, Press Any Key to Restart")
+        }
+        
         startOver();
         
 
@@ -157,7 +166,19 @@ function checkAnswer(currentLevel){
       
     })
 
-    
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+      // Take the user to a different screen here.
+      
+      $("h1").html("<em>Press Start Button</em>")
+      $("h1").on({ 'touchstart' : function(){
+        number++;
+        console.log(number)
+        started = "true";
+        
+        nextSequence();
+        } });
+
+  }
 
 
     
